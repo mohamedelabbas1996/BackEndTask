@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BackEndTask.Models.Item>
+
+@{
+    ViewBag.Title = "BackEnd Task";
+}
+
+<h2>BackEnd Task</h2>
+
+<p>
+    @Html.ActionLink("Refresh", "Index")
+</p>
+<table class="table">
+    <tr>
+      
+        
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+
+        <td>
+            <a href=" @Html.DisplayFor(modelItem => item.link)" target = "_blank">  @Html.DisplayFor(modelItem => item.title) </a>
+        </td>
+        
+    </tr>
+}
+
+</table>

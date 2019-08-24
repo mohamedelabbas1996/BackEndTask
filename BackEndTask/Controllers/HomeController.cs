@@ -23,6 +23,12 @@ namespace BackEndTask.Controllers
           // ViewBag.response = response; 
              return  View(response.Items);
         }
+        public async Task<ActionResult> Details(int question_id ) {
+
+            Item item =  await apiConnector.getQuestionByID(question_id);
+            return View(item);
+
+        }
 
         public ActionResult About()
         {

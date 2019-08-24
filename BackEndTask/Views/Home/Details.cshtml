@@ -1,0 +1,156 @@
+﻿@model BackEndTask.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.is_answered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_answered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.view_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.view_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answer_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answer_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_activity_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_activity_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.creation_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creation_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <h4>Owner Information </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.owner.user_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.owner.user_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.owner.user_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.owner.user_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.owner.reputation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.owner.reputation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.owner.profile_image)
+        </dt>
+
+        <dd>
+            <img src=" @Html.DisplayFor(model => model.owner.profile_image)" />"
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.owner.link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.owner.link)
+        </dd>
+
+        
+
+    </dl>
+    <h4>Tags</h4>
+    <dl class="dl-horizontal">
+        @foreach (var tag in Model.Tags)
+        {
+            <dt>
+               
+            </dt>
+
+            <dd>
+               @tag
+            </dd>
+
+        }
+    </dl>
+</div>
+
+
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

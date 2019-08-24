@@ -41,6 +41,12 @@ namespace BackEndTask.Connectors
            
 
         }
+        public async Task<Item> getQuestionByID(int id) {
+            var res = await httpClient.GetAsync("2.2/questions/"+id.ToString()+"?order=desc&sort=activity&site=stackoverflow");
+             var response = await res.Content.ReadAsAsync<Response>();
+            return response.Items.FirstOrDefault<Item>();
+
+        }
             
 
 

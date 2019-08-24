@@ -24,7 +24,7 @@
         
 
         <td>
-            <a href=" @Html.DisplayFor(modelItem => item.link)" target = "_blank">  @Html.DisplayFor(modelItem => item.title) </a>
+            <a href=@Url.Action("Details","Home", new { question_id = item.question_id }) target = "_blank">  @Html.DisplayFor(modelItem => item.title) </a>
         </td>
         
     </tr>
